@@ -6,8 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/onyx-perf
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/onyx-perf/proprietary/system_ext/etc/seccomp_policy/perfservice.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/perfservice.policy \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/init.qlm-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qlm-service.rc \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/poweropt-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/poweropt-service.rc \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/vendor.qsap.qapeservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qsap.qapeservice.rc \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.perf2-hal-service.rc \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/lm/AppClassifierFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AppClassifierFeature.xml \
@@ -40,11 +40,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/perf/testcommonresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/testcommonresourceconfigs.xml \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/perf/testtargetresourceconfigs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/testtargetresourceconfigs.xml \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/perf/thermal-boost.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/thermal-boost.conf \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/GamePowerOptFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/GamePowerOptFeature.xml \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/OffScreenPowerOptFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/OffScreenPowerOptFeature.xml \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/PSMPowerOptFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/PSMPowerOptFeature.xml \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/PowerFeatureConfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/PowerFeatureConfig.xml \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/VideoPowerOptFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/VideoPowerOptFeature.xml \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/qlm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qlm_config.xml \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/seccomp_policy/qsap_qapeservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/qsap_qapeservice.policy
 
@@ -60,12 +55,9 @@ PRODUCT_PACKAGES += \
     libqti_performance \
     vendor.qti.hardware.iop@2.0 \
     vendor.qti.hardware.perf2-hal-service \
-    poweropt-service \
     qlm-service \
     qsap_qapeservice \
     vendor.qti.hardware.perf2.xml \
-    vendor.qti.hardware.power.powermodule.xml \
-    libaodoptfeature \
     libapengine \
     libappclassifier \
     liblearningmodule \
@@ -77,11 +69,9 @@ PRODUCT_PACKAGES += \
     libperfconfig \
     libperfdb \
     libperfioctl \
-    libpowercore \
     libprefapps \
     libprekill \
     libprocomp \
-    libpsmoptfeature \
     libq-perflog \
     libqape_oem_ext \
     libqapesdk \
@@ -98,7 +88,5 @@ PRODUCT_PACKAGES += \
     libsagt \
     libsilkyscrolls \
     libskewknob \
-    libstandbyfeature \
     vendor.qti.hardware.perf2-V1-ndk_vendor \
-    vendor.qti.hardware.power.powermodule-V1-ndk \
     vendor.qti.memory.pasrmanager-V1-ndk

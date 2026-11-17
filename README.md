@@ -1,7 +1,7 @@
 # proprietary_vendor_xiaomi_onyx-perf
 
 Qualcomm's perf stack (perfd: `vendor.qti.hardware.perf2-hal-service` and its feature libraries,
-poweropt, QLM, QAPE) and the BoostFramework jars (`QPerformance`, `UxPerformance`, `QXPerformance`)
+QLM, QAPE; poweropt is left out, it crashed in a loop) and the BoostFramework jars (`QPerformance`, `UxPerformance`, `QXPerformance`)
 with their system libraries, from the onyx stock dump OS3.0.303.0.WOLMIXM.
 
 Only the DerpFest build of onyx uses it: DerpFest's frameworks/base carries BoostFramework, which
