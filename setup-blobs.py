@@ -66,6 +66,13 @@ for e in entries:
                   f'    target: {{\n        android_arm64: {{\n            srcs: [\n                "{src}",\n            ],\n        }},\n    }},\n'
                   f'    compile_multilib: "64",\n    strip: {{\n        none: true,\n    }},\n    check_elf_files: false,\n    prefer: true,\n{rel}{specific(e)}}}\n')
         packages.append(name)
+    elif e.endswith('.apk'):
+        # Qualcomm's seapp_contexts gives it its domain only with the platform certificate
+        name = base[:-4]
+        priv = '    privileged: true,\n' if '/priv-app/' in e else ''
+        bp.append(f'\nandroid_app_import {{\n    name: "{name}",\n    owner: "xiaomi",\n    apk: "{src}",\n'
+                  f'    certificate: "platform",\n    dex_preopt: {{\n        enabled: false,\n    }},\n{priv}{specific(e)}}}\n')
+        packages.append(name)
     elif '/etc/vintf/' in e:
         # Make refuses VINTF fragments in PRODUCT_COPY_FILES
         sub = os.path.dirname(e.split('/etc/', 1)[1])

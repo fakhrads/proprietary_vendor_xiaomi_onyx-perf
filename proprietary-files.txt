@@ -13,11 +13,14 @@ system/framework/QPerformance.jar|08a45ff376db078e47cab9e5c18a89b4bb7476c8
 system/framework/QXPerformance.jar|0e97ea4f975f66d79da9e5e687edd00dab05181b
 system/framework/UxPerformance.jar|e8e4935d439ea759016ff2358a78ce4b752f1bcf
 system/lib64/vendor.qti.hardware.perf2-V1-ndk.so|7043a0fab24f3a14f6e3587d9724f8b3afe73285
+system_ext/app/workloadclassifier/workloadclassifier.apk|3821af82a56f29f1d4955cf440a00c3f3367ea27
 system_ext/bin/perfservice|c2f0f25b9904d58be2b43649191bdae1aae50031
+system_ext/etc/perf/wlc_model.tflite|83cf4df067bc14c78f31943f32bcaf6f32419125
 system_ext/lib64/libqti-at.so|3421cb79594bc2b1009e7b3da8d76f6ef18e36ee
 system_ext/lib64/libqti-iopd-client_system.so|ba5be7cabb002e936dc3ceaf107f280ddc53aabc
 system_ext/lib64/libqti-perfd-client_system.so|a7ce51bbfa0aedbda9ebaeaa5f232cf8995f8249
 system_ext/lib64/libqti_performance.so|693386977e6c787d3608946ee0274749da623ab5
+system_ext/lib64/libqti_workloadclassifiermodel.so|e074c3e568484f7b9132eec8b25ec92d207e7bff
 system_ext/lib64/vendor.qti.hardware.iop@2.0.so|e0faac1d83b3bc5e6c529b3425a6a5528ed8012b
 
 # Perf HAL

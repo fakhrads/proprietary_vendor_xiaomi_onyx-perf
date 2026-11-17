@@ -6,6 +6,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/onyx-perf
 
 PRODUCT_COPY_FILES += \
+    vendor/xiaomi/onyx-perf/proprietary/system_ext/etc/perf/wlc_model.tflite:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/perf/wlc_model.tflite \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/init.qlm-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.qlm-service.rc \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/vendor.qsap.qapeservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qsap.qapeservice.rc \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.perf2-hal-service.rc \
@@ -46,11 +47,13 @@ PRODUCT_PACKAGES += \
     QXPerformance \
     UxPerformance \
     vendor.qti.hardware.perf2-V1-ndk \
+    workloadclassifier \
     perfservice \
     libqti-at \
     libqti-iopd-client_system \
     libqti-perfd-client_system \
     libqti_performance \
+    libqti_workloadclassifiermodel \
     vendor.qti.hardware.iop@2.0 \
     vendor.qti.hardware.perf2-hal-service \
     qlm-service \
