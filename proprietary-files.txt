@@ -5,6 +5,8 @@
 # writer of mi_thermald's boost node.
 # poweropt-service is left out: it crashed in a loop on DerpFest (SIGSEGV in libpowercore's
 # PowerOptXMLParser destructor, in libtinyxml2), and nothing else loads libpowercore.
+# The seccomp policies of perfservice and qsap_qapeservice are in the device tree (perf/seccomp):
+# stock's Android 16 lists kill them with SIGSYS on Android 17.
 
 # BoostFramework (QPerformance and UxPerformance go in PRODUCT_BOOT_JARS)
 system/framework/QPerformance.jar|08a45ff376db078e47cab9e5c18a89b4bb7476c8
@@ -12,7 +14,6 @@ system/framework/QXPerformance.jar|0e97ea4f975f66d79da9e5e687edd00dab05181b
 system/framework/UxPerformance.jar|e8e4935d439ea759016ff2358a78ce4b752f1bcf
 system/lib64/vendor.qti.hardware.perf2-V1-ndk.so|7043a0fab24f3a14f6e3587d9724f8b3afe73285
 system_ext/bin/perfservice|c2f0f25b9904d58be2b43649191bdae1aae50031
-system_ext/etc/seccomp_policy/perfservice.policy|0101969bfecbb5b93b90156c1092c2d221a18083
 system_ext/lib64/libqti-at.so|3421cb79594bc2b1009e7b3da8d76f6ef18e36ee
 system_ext/lib64/libqti-iopd-client_system.so|ba5be7cabb002e936dc3ceaf107f280ddc53aabc
 system_ext/lib64/libqti-perfd-client_system.so|a7ce51bbfa0aedbda9ebaeaa5f232cf8995f8249
@@ -57,7 +58,6 @@ vendor/etc/perf/testcommonresourceconfigs.xml|5ebc7075370c64fe9994b4fdbe7b54a5ee
 vendor/etc/perf/testtargetresourceconfigs.xml|398fff35fd586c514d3aa25f5163b3241ec22a3f
 vendor/etc/perf/thermal-boost.conf|634449ec84599511cc3f76102d61be0a35ea6ad8
 vendor/etc/qlm_config.xml|4884b9d3c4ebf4eb9728e5ae43ba2c59e497510d
-vendor/etc/seccomp_policy/qsap_qapeservice.policy|f882421d60488aac8d09d2c3611ba1f39cb12872
 vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml|bce83985c2e6f1ca205c93fadf86ca4e1da6bd36
 vendor/lib64/libapengine.so|3568dff53964e682c10b3a22315a4ac08407eb90
 vendor/lib64/libappclassifier.so|bdf3f505209c86d1ee4fc6ac8deb9e011f9c2572
