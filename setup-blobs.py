@@ -66,6 +66,12 @@ for e in entries:
                   f'    target: {{\n        android_arm64: {{\n            srcs: [\n                "{src}",\n            ],\n        }},\n    }},\n'
                   f'    compile_multilib: "64",\n    strip: {{\n        none: true,\n    }},\n    check_elf_files: false,\n    prefer: true,\n{rel}{specific(e)}}}\n')
         packages.append(name)
+    elif '/etc/vintf/' in e:
+        # Make refuses VINTF fragments in PRODUCT_COPY_FILES
+        sub = os.path.dirname(e.split('/etc/', 1)[1])
+        bp.append(f'\nprebuilt_etc_xml {{\n    name: "{base}",\n    owner: "xiaomi",\n    src: "{src}",\n'
+                  f'    filename_from_src: true,\n    sub_dir: "{sub}",\n{specific(e)}}}\n')
+        packages.append(base)
     else:
         part = partition(e)
         out = {'vendor': '$(TARGET_COPY_OUT_VENDOR)', 'system_ext': '$(TARGET_COPY_OUT_SYSTEM_EXT)',

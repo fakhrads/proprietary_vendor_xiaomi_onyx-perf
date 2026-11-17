@@ -46,9 +46,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/PowerFeatureConfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/PowerFeatureConfig.xml \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/pwr/VideoPowerOptFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/pwr/VideoPowerOptFeature.xml \
     vendor/xiaomi/onyx-perf/proprietary/vendor/etc/qlm_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qlm_config.xml \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/seccomp_policy/qsap_qapeservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/qsap_qapeservice.policy \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/vendor.qti.hardware.perf2.xml \
-    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
+    vendor/xiaomi/onyx-perf/proprietary/vendor/etc/seccomp_policy/qsap_qapeservice.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/qsap_qapeservice.policy
 
 PRODUCT_PACKAGES += \
     QPerformance \
@@ -65,6 +63,8 @@ PRODUCT_PACKAGES += \
     poweropt-service \
     qlm-service \
     qsap_qapeservice \
+    vendor.qti.hardware.perf2.xml \
+    vendor.qti.hardware.power.powermodule.xml \
     libaodoptfeature \
     libapengine \
     libappclassifier \
