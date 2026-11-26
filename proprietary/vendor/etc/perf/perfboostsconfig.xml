@@ -1221,16 +1221,6 @@
                         0x63C5C200, 12, 0, 3014400, 2, 3014400, 3, 3014400,6, 3014400, 7, 3014400, 8, 3014400,
                         0x63C5C000, 12, 0, 3014400, 2, 3014400, 3, 3014400, 6, 3014400, 7, 3014400, 8, 3014400, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1"/>
 
-        <!-- Drag end (type 8, sent by DisplayPolicy as the finger lifts): keeps the GPU floor of
-             the drag boost through what animates afterwards (the shade settling, a list snapping
-             back), then times out. GPU devfreq min_freq in MHz. -->
-        <Config
-             Id="0x00001087" Type="8" Enable="true" Timeout="400" Target="tuna"
-             Resources="0x4280C000, 688" />
-        <Config
-             Id="0x00001087" Type="8" Enable="true" Timeout="400" Target="tuna" Fps="120, 144, 180, 240"
-             Resources="0x4280C000, 688" />
-
         <!-- WALT_ADAPTIVE_HIGH_FREQ_BIG resource opcode, value -->
         <!-- WALT_ADAPTIVE_HIGH_FREQ_LITTLE resource opcode, value -->
         <!-- WALT_ADAPTIVE_HIGH_FREQ_PRIME resource opcode, value -->
