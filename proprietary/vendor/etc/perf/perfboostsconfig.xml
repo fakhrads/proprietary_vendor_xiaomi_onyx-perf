@@ -606,6 +606,13 @@
         <!-- PID Affine opcode, value -->
         <!-- MPCTLV3_SCHED_LEGACY_FREQ_LEVELS BIG -->
         <!-- MPCTLV3_SCHED_LEGACY_FREQ_LEVELS TITANIUM -->
+        <!-- SCHED_TASK_BOOST (0x40C80000) on the tuna scroll and drag boosts: scenariod fills the
+             first entry with the top app's pid and the next with its RenderThread tid (both sent
+             by OomAdjuster through VENDOR_HINT_PASS_PID) and puts the value in the upper 16 bits;
+             perfd writes "tid 3-value" to /proc/sys/walt/sched_per_task_boost. 2 = ON_MID keeps
+             the UI thread off the silver cores, 1 = ON_MAX prefers the prime core for the
+             RenderThread without pinning it there. VENDOR_HINT_BOOST_RENDERTHREAD itself only
+             drives /proc/<tid>/sched_boost, which this GKI kernel does not have. -->
         <!-- Type 1 Heavy Scrolls : Horizontal and Verical -->
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="tuna"
@@ -613,7 +620,7 @@
                        0x4080C200, 1094400, 0x40808200, 960000, 0x40814200, 787200,
                        0x40C00000, 2, 0x41000000, 3, 0x43480000, 0xC9900,
                        0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41008200, 0,
-                       0x41848000, 0xE3C88, 0x42C20000, 1, 0x4280C000, 688" />
+                       0x41848000, 0xE3C88, 0x42C20000, 1, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="tuna" Fps="120, 144, 180, 240"
@@ -625,7 +632,7 @@
                        0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41008200, 0,
                        0x41848000, 0xE3C88, 0x42C20000, 1,
                        0x63C5C200, 12, 0, 3014400, 2, 3014400, 3, 3014400,6, 3014400, 7, 3014400, 8, 3014400,
-                       0x63C5C000, 12, 0, 3014400, 2, 3014400, 3, 3014400, 6, 3014400, 7, 3014400, 8, 3014400, 0x4280C000, 688"/>
+                       0x63C5C000, 12, 0, 3014400, 2, 3014400, 3, 3014400, 6, 3014400, 7, 3014400, 8, 3014400, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1"/>
 
         <!-- Type 1 Heavy Scrolls : Horizontal and Verical -->
         <!-- LLCC_DDR_BW_MIN_FREQ_V2 resource opcode, value-->
@@ -691,13 +698,13 @@
             Id="0x00001080" Type="2" Enable="true" Target="tuna"
             Resources="0x4303C000, 0xA6428, 0x4080C000, 1497000, 0x40808000, 119000, 0x40814000, 633000,
                        0x40C00000, 2, 0x41000000, 3, 0x43480000, 0xC9900,
-                       0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41848000, 0xE3C88, 0x4280C000, 688" />
+                       0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41848000, 0xE3C88, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="tuna" Fps="120, 144, 180, 240"
             Resources="0x4303C000, 0xA6428, 0x4080C000, 1593000, 0x40808000, 1286000, 0x40814000, 787000,
                        0x40C00000, 2, 0x41000000, 3, 0x43480000, 0xC9900,
-                       0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41848000, 0xE3C88, 0x4280C000, 688" />
+                       0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41848000, 0xE3C88, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
         <!-- Type 2 Medium Scrolls : Horizontal and Verical -->
         <!-- LLCC_DDR_BW_MIN_FREQ_V2 resource opcode, value-->
@@ -743,11 +750,11 @@
         <Config
             Id="0x00001080" Type="3" Enable="true" Target="tuna"
             Resources="0x40C00000, 2, 0x4080C000, 1056000, 0x40808000, 787000, 0x40814000, 633000,
-                       0x41848000, 0xE3C88, 0x4280C000, 688" />
+                       0x41848000, 0xE3C88, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
         <Config
             Id="0x00001080" Type="3" Enable="true" Target="tuna" Fps="120, 144, 180, 240"
             Resources="0x40C00000, 2, 0x4080C000, 1190000, 0x40808000, 940000, 0x40814000, 787000,
-                       0x41848000, 0xE3C88, 0x4280C000, 688" />
+                       0x41848000, 0xE3C88, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
          <!-- Type 3 Light Scrolls : Horizontal and Verical -->
          <!-- SCHED_BOOST resource opcode, value-->
@@ -1187,7 +1194,7 @@
              Resources="0x4080C000, 1401000, 0x4080C100, 1228000, 0x4080C200, 787000,
                         0x40808000, 1286000, 0x40808100, 979000, 0x40808200, 787000,
                         0x40814000, 1190000, 0x40814100, 902000, 0x40814200, 633000,
-                        0x41848000, 0xE3C88, 0x4280C000, 688" />
+                        0x41848000, 0xE3C88, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
         <!-- WALT_ADAPTIVE_HIGH_FREQ_BIG resource opcode, value -->
         <!-- WALT_ADAPTIVE_HIGH_FREQ_LITTLE resource opcode, value -->
@@ -1212,7 +1219,7 @@
                         0x40814000, 1497000, 0x40814100, 1017000, 0x40814200, 633000,
                         0x40C00000, 2, 0x4303C000, 0xA6428, 0x43480000, 0x114900, 0x41848000, 0xE3C88,
                         0x63C5C200, 12, 0, 3014400, 2, 3014400, 3, 3014400,6, 3014400, 7, 3014400, 8, 3014400,
-                        0x63C5C000, 12, 0, 3014400, 2, 3014400, 3, 3014400, 6, 3014400, 7, 3014400, 8, 3014400, 0x4280C000, 688"/>
+                        0x63C5C000, 12, 0, 3014400, 2, 3014400, 3, 3014400, 6, 3014400, 7, 3014400, 8, 3014400, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1"/>
 
         <!-- Drag end (type 8, sent by DisplayPolicy as the finger lifts): keeps the GPU floor of
              the drag boost through what animates afterwards (the shade settling, a list snapping
