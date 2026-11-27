@@ -696,7 +696,7 @@
         <!-- Type 2 Medium Scrolls : Horizontal and Verical -->
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="tuna"
-            Resources="0x4303C000, 0xA6428, 0x4080C000, 1497000, 0x40808000, 119000, 0x40814000, 633000,
+            Resources="0x4303C000, 0xA6428, 0x4080C000, 1497000, 0x40808000, 1190000, 0x40814000, 633000,
                        0x40C00000, 2, 0x41000000, 3, 0x43480000, 0xC9900,
                        0x40C74000, 0xFC, 0x40408000, 0x27, 0x41008000, 0, 0x41848000, 0xE3C88, 0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
@@ -1275,12 +1275,14 @@
             Id="0x00001087" Type="2" Enable="true" Timeout="0" Target="tuna"
             Resources="0x40C00000, 2, 0x4080C000, 1056000, 0x4080C100, 902000, 0x4080C200, 787000,
                        0x40808000, 787000, 0x40808100, 883000, 0x40808200, 787000,
-                       0x40814000, 633000, 0x40814100, 787000, 0x40814200, 633000" />
+                       0x40814000, 633000, 0x40814100, 787000, 0x40814200, 633000,
+                       0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
         <Config
             Id="0x00001087" Type="2" Enable="true" Timeout="0" Target="tuna" Fps="120, 144, 180, 240"
             Resources="0x40C00000, 2, 0x4080C000, 1190000, 0x4080C100, 902000, 0x4080C200, 787000,
                        0x40808000, 1056000, 0x40808100, 883000, 0x40808200, 787000,
-                       0x40814000, 940000, 0x40814100, 787000, 0x40814200, 633000" />
+                       0x40814000, 940000, 0x40814100, 787000, 0x40814200, 633000,
+                       0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
         <!-- MPCTLV3_SCHED_BOOST, value -->
         <!-- WALT_ADAPTIVE_HIGH_FREQ_BIG resource opcode, value -->
@@ -1311,7 +1313,8 @@
         <!-- Type 3 Light Drags: -->
         <Config
             Id="0x00001087" Type="3" Enable="true" Timeout="0" Target="tuna"
-            Resources="0x40C78000, 0, 0x40C7C000, 0, 0x40C00000, 2" />
+            Resources="0x40C78000, 0, 0x40C7C000, 0, 0x40C00000, 2,
+                       0x4280C000, 688, 0x40C80000, 2, 0x40C80000, 1" />
 
         <!-- MPCTLV3_SCHED_MIN_TASK_UTIL_FOR_COLOCATION, value -->
         <!-- MPCTLV3_SCHED_MIN_TASK_UTIL_FOR_BOOST, value -->
